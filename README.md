@@ -15,3 +15,5 @@ https://sergey-tihon.github.io/Stanford.NLP.NET/StanfordPOSTagger.html
 3. Skip the words which are Prepositions, Pronouns, Conjunctions & store the remaining into a dictionary. While adding the words to a dictionary, take word as key & their count as values.
    If a word is repeating then update the value w.r.t the word else add it to the dictionary incase of new word.
  
+ ![Output](https://github.com/rakeshdadamatti/StanfordTaggerNLP/blob/master/output-screenshot.jpg)
+
