@@ -1,4 +1,4 @@
-# StanfordTaggerNLP
+# StanfordPOSTaggerNLP
 To find out top 5 repeating words(Non Prepositions, Pronouns, Conjunctions) from a huge dataset
 
 # Requirements
