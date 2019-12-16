@@ -20,7 +20,7 @@ namespace CloudCherry
             var sentences = MaxentTagger.tokenizeText(new StringReader(Regex.Replace(text, @"[^\w\d\s]", ""))).toArray();
             foreach (List sentence in sentences)
             {
-                Console.WriteLine("Pattem Digital: Processing {0} words...",sentence.size());
+                Console.WriteLine("Processing {0} words...",sentence.size());
                 var taggedSentence = tagger.tagSentence(sentence).toArray();
                 foreach (TaggedWord word in taggedSentence)
                 {
