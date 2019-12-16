@@ -78,8 +78,7 @@ namespace CloudCherry
                         string textInput = item.textInput;
                         if (questions.Contains(questionId))
                         {
-                            // text += textInput;
-                            text = "The laptop is in the desk and laptop looks good";
+                            text += textInput;             
                             counter++;
                         }
                     }
@@ -89,7 +88,7 @@ namespace CloudCherry
             {
                 Console.WriteLine("No answers found!");
             }
-            Console.WriteLine("Pattem Digital: {0} Answers found.", counter);
+            Console.WriteLine("{0} Answers found.", counter);
             return text;
         }
         static void Main(string[] args)
@@ -99,17 +98,19 @@ namespace CloudCherry
             string Password = ConfigurationManager.AppSettings["Password"];
             string Token = string.Empty;
 
-            Console.WriteLine("Pattem Digital: Authenticating.");
+            Console.WriteLine("Authenticating.");
+            
             Token = Authorize(BaseUrl, Username, Password);
-            Console.WriteLine("Pattem Digital: Token received successfully!");
-
-            Console.WriteLine("Pattem Digital: Fetching questions.");
+            
+            Console.WriteLine("Token received successfully!");
+            Console.WriteLine("Fetching questions.");
+            
             HashSet<string> questions = FetchActiveQuestions(BaseUrl, Token);
-            Console.WriteLine("Pattem Digital: {0} Question(s) received.", questions.Count);
-
-            Console.WriteLine("Pattem Digital: Fetching answers.");
+            
+            Console.WriteLine("{0} Question(s) received.", questions.Count);
+            Console.WriteLine("Fetching answers.");
+            
             string text = FetchAnswers(BaseUrl, Token, questions);
-
             new WordOccurrence().DisplayWords(text);
         }
     }
